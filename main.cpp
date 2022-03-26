@@ -12,6 +12,11 @@ int main() {
     s.push(0);
     f(s, 1);
     f(s, 2);
+    s.push(4);
+    s.push(1);
+    s.push(2);
+    s.push(6);
+    s.push(5);
 
     while (!s.empty()) {
         cout <<

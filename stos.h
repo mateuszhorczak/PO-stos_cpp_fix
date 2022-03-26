@@ -15,7 +15,7 @@ private:
 
 
 public:
-    Stos(int lengthMax) : lengthMax(lengthMax) {
+    explicit Stos(int lengthMax) : lengthMax(lengthMax) {
         length = 0;
         this->lengthMax = lengthMax;
         tab = new int[lengthMax];
@@ -42,7 +42,7 @@ public:
     }
 
     int pop() {
-        if (length >= 0) {
+        if (!empty()) {
             length--;
             return tab[length];
         }
