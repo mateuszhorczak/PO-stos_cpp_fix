@@ -29,9 +29,17 @@ public:
         cout << "Konstruktor domyślny" << endl;
     }
 
+    Stos(const Stos &stos) {
+        length = stos.length;
+        lengthMax = stos.lengthMax;
+        tab = stos.tab;
+        cout << "THIS IS THIS IS THIS IS" << endl;
+    }
+
+
     ~Stos() {
-        delete[] tab;
         cout << "Hejka tu twój destruktor" << endl;
+        delete[] tab;
     }
 
     void push(int value) {
