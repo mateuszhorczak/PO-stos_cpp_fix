@@ -15,30 +15,30 @@ private:
 
 
 public:
-    explicit Stos(int lengthMax) : lengthMax(lengthMax) {
+    Stos(int lengthMax) : lengthMax(lengthMax) {
         length = 0;
         this->lengthMax = lengthMax;
         tab = new int[lengthMax];
-        cout << "Konstruktor parametrowy" << endl;
+        cout << "Konstruktor parametrowy wywolany (" << addressof(tab) << ")" << endl;
     }
 
     Stos() {
         length = 0;
         lengthMax = 25;
         tab = new int[lengthMax];
-        cout << "Konstruktor domyślny" << endl;
+        cout << "Konstruktor domyslny wywolany(" << addressof(tab) << ")" << endl;
     }
 
     Stos(const Stos &stos) {
         length = stos.length;
         lengthMax = stos.lengthMax;
         tab = stos.tab;
-        cout << "THIS IS THIS IS THIS IS" << endl;
+        cout << "Konstruktor kopiujący wywolany (" << addressof(tab) << ")" << endl;
     }
 
 
     ~Stos() {
-        cout << "Hejka tu twój destruktor" << endl;
+        cout << "Destruktor wywolany (" << addressof(tab) << ")" << endl;
         delete[] tab;
     }
 
