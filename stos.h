@@ -33,6 +33,9 @@ public:
         length = stos.length;
         lengthMax = stos.lengthMax;
         tab = stos.tab;
+        for (int i = 0; i < length - 1; i++) {
+            tab[i] = stos.tab[i];
+        }
         cout << "Konstruktor kopiujący wywolany (" << addressof(tab) << ")" << endl;
     }
 
@@ -61,18 +64,18 @@ public:
         return tab[length-1];
     }
 
-    int empty() {
+    bool empty() {
         if (length == 0) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
-    int full() {
+    bool full() {
         if (length == lengthMax) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
 };
